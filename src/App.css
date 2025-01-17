@@ -1,0 +1,151 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+li {
+  width: 600px;
+  border: 3px solid #ffffff; /* Jasne obramowanie */
+  border-radius: 10px; /* Zaokrąglone rogi */
+  
+}
+.setli{
+  width: 500px;
+  border: none;
+  /* Center items horizontally (optional) */
+  gap: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 5px;
+  
+}
+
+.finishedSetLi{
+  background-color: green;
+  width: 500px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 5px;
+  
+}
+input{
+  height: 30px;
+  border: 4px
+  
+}
+.removeSet{
+  background-color: red;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  padding: 0.6em 1.2em;
+  margin: auto;
+
+ 
+}
+.finishedSet{
+  
+    background-color: green;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding: 0.6em 1.2em;
+    margin: auto;
+  
+   
+  
+}
+input {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  width: 75px;
+
+}
+.clock{
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  width: 75px;
+}
+.clocksection {
+  
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center items horizontally (optional) */
+  gap: 10px; /* Space between elements */
+}
+.inline{
+  display: flex;
+  align-items:center; /* Align items vertically */
+  justify-content: center; 
+  gap: 10px;
+}
+ul {    list-style: none;}
+ol {    list-style: none;}
+.exerciseEntry{
+  width: 300px;
+  height: 20px;
+}
+.Exercise{
+  margin: 10px;
+  padding: 10px;
+}
+.adjustClock{
+  background-color: green;
+  border: 2px solid white;
+}
+.delete-button,.move-button,.exerciseEntry,.add-button,.addSet{
+  border: 2px solid white;
+}
