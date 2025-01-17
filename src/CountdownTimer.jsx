@@ -46,13 +46,13 @@ function CountdownTimer({removeTimer}) {
 
   return (
     <><br />
-    <div className="clocksection">
-      <button className="adjustClock" onClick={add15Seconds}>+15s</button>
+    <div className="clock-section">
+      <button className="adjust-clock" onClick={add15Seconds}>+15s</button>
       <div className="clock">
       {formatTime(time)}
       </div>       
         
-        <button className="adjustClock" onClick={subtract15Seconds}>-15s</button>
+        <button className="adjust-clock" onClick={subtract15Seconds}>-15s</button>
         </div>
     </>
   );

@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 function ExerciseComponent({ Exercise, index, onDelete, onMoveUp, onMoveDown }) {
     const[serie,setSerie] = useState([])
-    const[CountdownTimer,setCountdownTimer] = useState("")
+    const[countdownTimer,setCountdownTimer] = useState("")
 
     function addSet(){
         setSerie((s) => [...s, uuidv4()]);
@@ -14,7 +14,7 @@ function ExerciseComponent({ Exercise, index, onDelete, onMoveUp, onMoveDown }) 
     
     
     function removeSet(idkey) {
-        console.log("usun" + idkey);
+        console.log("delete " + idkey);
         setSerie((serie) => serie.filter((set) => set !== idkey));
     }
     function setNewCountdownTimer(index){
@@ -25,7 +25,7 @@ function ExerciseComponent({ Exercise, index, onDelete, onMoveUp, onMoveDown }) 
 
     useEffect(() => {addSet();}, []);
   return (
-    <li className="Exercise">
+    <li className="exercise">
        
     <div className="inline">
         <button className="delete-button" onClick={() => onDelete(index)}>        Delete exercise      </button>
@@ -39,12 +39,12 @@ function ExerciseComponent({ Exercise, index, onDelete, onMoveUp, onMoveDown }) 
             <Sets key={id}
             removeSet={removeSet}
             index={id} 
-            activeCDT = {CountdownTimer}
-            setCDT = {setNewCountdownTimer}
+            activeCountdownTimer = {countdownTimer}
+            setCountdownTimer = {setNewCountdownTimer}
             />))}</ol>
       <br />
       
-      <button className="addSet" onClick={() => addSet()}>ADD SET</button>
+      <button className="add-set" onClick={() => addSet()}>ADD SET</button>
       
       
 

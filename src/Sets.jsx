@@ -1,10 +1,10 @@
 import React,{useState} from "react";
-import CountdownTimer from "./clock";
+import CountdownTimer from "./CountdownTimer";
 
-function Sets({removeSet,index,activeCDT,setCDT}){
-    const [Weight, setWeight] = useState("");
-    const [Reps, setReps] = useState("");
-    const [listyle,Setlistyle] = useState("setli");
+function Sets({removeSet,index,activeCountdownTimer,setCountdownTimer}){
+    const [weight, setWeight] = useState("");
+    const [reps, setReps] = useState("");
+    const [listyle,Setlistyle] = useState("set-li");
     const [timer,setTimer] = useState(false);
 
     const [isReadOnly, setIsReadOnly] = useState(false);
@@ -18,10 +18,10 @@ function Sets({removeSet,index,activeCDT,setCDT}){
         
     }
     function finishedSet(){
-        Setlistyle("finishedSetLi")
+        Setlistyle("finished-set-li")
         setIsReadOnly(true);
         setTimer(true)
-        setCDT(index)
+        setCountdownTimer(index)
     }
     function removeTimer(){
         setTimer(false)
@@ -30,17 +30,17 @@ function Sets({removeSet,index,activeCDT,setCDT}){
     return(<li className={listyle}>
        
     <div className="inline">
-        <button className="removeSet" onClick={() => removeSet(index)}>✖</button>
+        <button className="remove-set" onClick={() => removeSet(index)}>✖</button>
 
-        <input type="number" onChange={handleweightChange} size={1} placeholder="Weight" readOnly={isReadOnly}></input>X
-        <input type="number" onChange={handlerepsChange}size={3} placeholder="Reps" readOnly={isReadOnly}></input>
+        <input type="number" onChange={handleweightChange}  placeholder="Weight" readOnly={isReadOnly}></input>✖
+        <input type="number" onChange={handlerepsChange} placeholder="Reps" readOnly={isReadOnly}></input>
             
         
     
-        <button className="finishedSet" onClick={() => finishedSet()}>✔</button>
+        <button className="finished-set" onClick={() => finishedSet()} disabled={isReadOnly}>✔</button>
     </div>
    
-    {timer &&index==activeCDT &&<CountdownTimer removeTimer={removeTimer}/>} 
+    {timer &&index==activeCountdownTimer &&<CountdownTimer removeTimer={removeTimer}/>} 
     
     
     

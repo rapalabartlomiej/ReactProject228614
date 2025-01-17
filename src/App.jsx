@@ -4,7 +4,7 @@ import './App.css';
 
 
 function App() {
-  const [Exercise, setExercise] = useState([]);
+  const [exercise, setExercise] = useState([]);
   const [newExercise, setNewExercise] = useState("");
 
   function handleInputChange(event) {
@@ -19,18 +19,18 @@ function App() {
 
   function addExercise() {
     if (newExercise.trim() !== "") {
-      setExercise((t) => [...t, newExercise]);
+      setExercise((e) => [...e, newExercise]);
       setNewExercise("");
     }
   }
 
   function deleteExercise(index) {
-    setExercise((Exercise) => Exercise.filter((_, i) => i !== index));
+    setExercise((exercise) => exercise.filter((_, i) => i !== index));
   }
 
   function moveExerciseUp(index) {
     if (index > 0) {
-      const updatedExercise = [...Exercise];
+      const updatedExercise = [...exercise];
       [updatedExercise[index], updatedExercise[index - 1]] = [
         updatedExercise[index - 1],
         updatedExercise[index],
@@ -40,31 +40,31 @@ function App() {
   }
 
   function moveExerciseDown(index) {
-    if (index < Exercise.length - 1) {
-      const updatedExercise = [...Exercise];
+    if (index < exercise.length - 1) {
+      const updatedExercise = [...exercise];
       [updatedExercise[index], updatedExercise[index + 1]] = [updatedExercise[index + 1],updatedExercise[index],];
       setExercise(updatedExercise);
     }
   }
 
   return (
-    <div className="to-do-list">
+    <div>
       <h1>GYM APP</h1>
         
       <div>
-        <input className="exerciseEntry" type="text" onKeyDown={handleKeyDown}   placeholder="Enter exercise name"          value={newExercise}          onChange={handleInputChange}        />
+        <input className="exercise-entry" type="text" onKeyDown={handleKeyDown}   placeholder="Enter exercise name"          value={newExercise}          onChange={handleInputChange}        />
         <button className="add-button " onClick={addExercise}>          Add        </button>
       </div>
 
     
-      {Exercise.length === 0 ? (
+      {exercise.length === 0 ? (
         <p>Enter exercise name</p>
       ) : (
         <ul>
-          {Exercise.map((Exercise, index) => (
+          {exercise.map((exercise, index) => (
             <ExerciseComponent
-              key={`${Exercise}-${index}`}
-              Exercise={Exercise}
+              key={`${exercise}-${index}`}
+              Exercise={exercise}
               index={index}
               onDelete={deleteExercise}
               onMoveUp={moveExerciseUp}
